@@ -4,9 +4,31 @@
     <meta charset="utf-8">
     <title>Tarjeta de crédito válida</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
   </head>
   <body>
-    <header></header>
+    <!--FORMATO DE CARD VALIDATION-->
+   <div class="container">
+    <header>
+      <h3> OPM </h3>
+      <button id="easySum" onclick="easySum()">Da clic para un regalo</button>
+      <p id="answer"></p>
+    </header>
+    <h1>Realizar pago </h1>
+     <h3>Ingresa los datos de tu tarjeta</h3>
+          <p>Nombre/Apodo de tarjeta</p>
+            <input type="text">
+          <br>
+          <!-- Validacion de tarjeta-->
+          <p>Número de tarjeta</p>
+          <input type="text" maxlength="16" pattern="^[0-9]*$" id="numberTillSixteen" onchange="lengthCounter()">
+          <p id="showMyNumbers"></p>
+          <button onclick="reversedNu()">Poner numeros en reversa</button>
+
+          <br> <br>
+       <!--Botón de tarjeta-->
+       <button>Siguiente paso</button>  
+    </div> 
     <main></main>
     <footer></footer>
     <script src="index.js" type="module"></script>

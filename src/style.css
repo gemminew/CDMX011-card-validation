@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 4rem 8rem;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
