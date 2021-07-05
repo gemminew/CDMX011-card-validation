@@ -19,64 +19,68 @@ function easySum(){
 var originalArray = ""
 
 //MP 2 - Mostrar la cantidad de # que el usuario redacta en el input.
-function lengthCounter(){
-    numberTillSixteen = document.getElementById("numberTillSixteen").value;
-    console.log(numberTillSixteen.length)
+/* function lengthCounter(){
+    originalArray = document.getElementById("originalArray").value;
+    console.log(originalArray.length)
     var showMyNumbers = document.getElementById("showMyNumbers");
-    showMyNumbers.innerText = ("Aqui hay " + numberTillSixteen.length + " números" );
-}
+    showMyNumbers.innerText = ("Aqui hay " + originalArray.length + " números" );
+} */
 
-// Función para hacer secuencia en reversa
-function reverseArray(){   
-    var nu = originalArray.split('').reverse().join('');
-    console.log(nu)
-    //Esta parte solo muestra la funcionalidad de la reversa al usuario
-    document.getElementById("originalArray").value = nu;
-}
 
-console.log(reverseArray(originalArray));
 
-//Función para mostrar los numeros multiplicados
+// Algoritmo de Luhn
+var luhnAlgorithm = function (){   
+    var num = originalArray.split('').reverse();
+    console.log(num.join(''))
+    
+    var duplicateNumbers = num.map(function (n, i) {
+        if (i % 2 === 0) {
+        return  parseInt(n)} // Esta condicion retorna cada segundo digito 
+        else var g = (n * 2); // multiplica los numeros por dos
+        if  (g > 9 ) { g -= 9} // simplificar dos digitos
+        return g;
+    })
+
+    var sum = duplicateNumbers.reduce((n, i) => n + i);
+    return sum % 10 === 0;
+/* 
+    console.log(duplicateNumbers)   
+    console.log(sum)
+    console.log(luhnAlgorithm) */
+}  
+
+ function validateCard(){
+     
+    originalArray = document.getElementById("originalArray").value;
+    
+    let d = luhnAlgorithm() 
+
+    if (d === true) {
+      document.getElementById("result").innerHTML = ("La tarjeta es valida");}
+    else {
+      document.getElementById("result").innerHTML = ("La tarjeta no es valida");
+        }
+
+   // result.innerText = ("La tarjeta " + result + " es " );
+} 
+// Boton de validacion
+
+    
+// **Algoritmo de Luhn**
 // 1. Crear un nuevo array y aplicar el method .reverse()
 // 2. Filtrar los elementos del array para que solo multiplique cada segundo digito en la secuencia 
-// 3. Utilizar una operación ternaria para simplificar los números mayores a 9 o una condición 'if'
-// 4. Sumar el total del array
-// 5. Aplicar .reduce() para dividir el resultado % 10
+// 3. Utilizar una operación 'modulus'  para simplificar los números mayores a 9 o una condición 'if'
+// 4. Sumar el total del array aplicando .reduce() 
+// 5. Dividir el resultado % 10
 
-var reverse = function(originalArray) {
-    var newArray = [];
-    var size = originalArray.length;
-    var lastPosition = size - 1;
-    for (var i = lastPosition; i >=0; i--) {
-        new array.push(originalArray[i]);
-    }
-    return newArray;
-}
-console.log(reverse(originalArray));
-
-    function doubleDigts(reversedNu){
-        let everyOtherNo = 
-         numberTillSixteen.split('').filter((element, index) => {
-            return  index % 2 === 0;})  
-        console.log(everyOtherNo)
-        //return everyOtherNo;
-
-        var doubleNumbers = {
-            doubledNumbers: everyOtherNo.map
-                (function (n) {return n * 2;})
-        };  
-        
-        return doubleNumbers.doubledNumbers;
-    }
-
-
-
-
-
-let number = 1;
-while (number <= 16) {
-  console.log(number);
-  number = number * 2;
-}
-
+//var reverse = function(originalArray) {
+  //  var newArray = [];
+    //var size = originalArray.length;
+    //var lastPosition = size - 1;
+    //for (var i = lastPosition; i >=0; i--) {
+      //  new array.push(originalArray[i]);
+    //}
+    //return newArray;
+//}
+//console.log(reverse(originalArray));
 
