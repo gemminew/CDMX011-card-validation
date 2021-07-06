@@ -1,10 +1,8 @@
-//import validator from './validator.js';
-
-//console.log(validator);
+import validator from './validator.js';
 
 //MP 1 - Mostrar la respuesta a una pregunta prompt
 
-let respuesta = "";
+/* let respuesta = "";
 
 function easySum(){
     document.getElementById("easySum")
@@ -13,11 +11,10 @@ function easySum(){
     var answer = document.getElementById("answer");
    answer.innerText = ("tu respuesta es " + pregunta);
     //document.write("Tu respuesta es " + pregunta)
-}
+} */
 
 //Variable global donde se almacena el array
 var originalArray = ""
-
 //MP 2 - Mostrar la cantidad de # que el usuario redacta en el input.
 /* function lengthCounter(){
     originalArray = document.getElementById("originalArray").value;
@@ -26,10 +23,8 @@ var originalArray = ""
     showMyNumbers.innerText = ("Aqui hay " + originalArray.length + " números" );
 } */
 
-
-
 // Algoritmo de Luhn
-var luhnAlgorithm = function (){   
+/* var luhnAlgorithm = function (){   
     var num = originalArray.split('').reverse();
     console.log(num.join(''))
     
@@ -43,22 +38,20 @@ var luhnAlgorithm = function (){
 
     var sum = duplicateNumbers.reduce((n, i) => n + i);
     return sum % 10 === 0;
-/* 
-    console.log(duplicateNumbers)   
-    console.log(sum)
-    console.log(luhnAlgorithm) */
-}  
-
+}   */
+// Validacion de tarjeta
+  document.getElementById('button-verify').addEventListener('click', validateCard);
  function validateCard(){
-     
-    originalArray = document.getElementById("originalArray").value;
-    
-    let d = luhnAlgorithm() 
 
-    if (d === true) {
-      document.getElementById("result").innerHTML = ("La tarjeta es valida");}
+    originalArray = document.getElementById("originalArray").value;
+
+    var approvedCard = validator.isValid(originalArray);
+    var lastFourNumbers = validator.maskify(originalArray);
+    
+    if (approvedCard === true) {
+      document.getElementById("result").innerHTML = ("La tarjeta es valida " + lastFourNumbers );}
     else {
-      document.getElementById("result").innerHTML = ("La tarjeta no es valida");
+      document.getElementById("result").innerHTML = ("La tarjeta no es valida" + lastFourNumbers);
         }
 
    // result.innerText = ("La tarjeta " + result + " es " );
@@ -83,4 +76,3 @@ var luhnAlgorithm = function (){
     //return newArray;
 //}
 //console.log(reverse(originalArray));
-

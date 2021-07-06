@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <title>Tarjeta de crédito válida</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="index.js"></script>
+    <script src="index.js" type="module"></script>
   </head>
   <body>
     <!--FORMATO DE CARD VALIDATION-->
    <div class="container">
-    <header>
+<!--     <header>
       <h3> OPM </h3>
       <button id="easySum" onclick="easySum()">Da clic para un regalo</button>
       <p id="answer"></p>
-    </header>
+    </header> -->
     <h1>Realizar pago </h1>
      <h3>Ingresa los datos de tu tarjeta</h3>
           <p>Nombre/Apodo de tarjeta</p>
@@ -21,8 +21,8 @@
           <br>
           <!-- Validacion de tarjeta-->
           <p>Número de tarjeta</p>
-          <input type="text" maxlength="16" pattern="^[0-9]*$" id="originalArray" onchange="validateCard()">
-          <button onclick="validateCard()">Verificar tarjeta</button>
+          <input type="text" maxlength="16" pattern="^[0-9]*$" id="originalArray">
+          <button id="button-verify">Verificar tarjeta</button>
           <p id="result"></p>
 
           <br> <br>
@@ -31,6 +31,5 @@
     </div> 
     <main></main>
     <footer></footer>
-    <script src="index.js" type="module"></script>
   </body>
 </html>
