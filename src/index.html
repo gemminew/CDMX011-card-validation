@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <title>Tarjeta de crédito válida</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="index.js" type="module"></script>
+
   </head>
   <body>
     <!--FORMATO DE CARD VALIDATION-->
@@ -14,20 +18,28 @@
       <button id="easySum" onclick="easySum()">Da clic para un regalo</button>
       <p id="answer"></p>
     </header> -->
-    <h1>Realizar pago </h1>
+    <h1>Confirmar compra</h1>
      <h3>Ingresa los datos de tu tarjeta</h3>
+     <div class="black"></div> <br>
+      <div class="twoCol">
+        <div class="col1">
           <p>Nombre/Apodo de tarjeta</p>
             <input type="text">
+        </div>
+         <div class="col2">
+           <p> CCV </p>
+           <input type=text>
+
+         </div>
+      </div>
           <br>
           <!-- Validacion de tarjeta-->
           <p>Número de tarjeta</p>
-          <input type="text" maxlength="16" pattern="^[0-9]*$" id="originalArray">
+          <input type="text" maxlength="16" pattern="^[0-9]*$" id="originalArray" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+          <br>
           <button id="button-verify">Verificar tarjeta</button>
           <p id="result"></p>
 
-          <br> <br>
-       <!--Botón de tarjeta-->
-       <button>Siguiente paso</button>  
     </div> 
     <main></main>
     <footer></footer>

@@ -49,9 +49,9 @@ var originalArray = ""
     var lastFourNumbers = validator.maskify(originalArray);
     
     if (approvedCard === true) {
-      document.getElementById("result").innerHTML = ("La tarjeta es valida " + lastFourNumbers );}
+      document.getElementById("result").innerHTML = ("La tarjeta con terminación "  + lastFourNumbers + " es valida");}
     else {
-      document.getElementById("result").innerHTML = ("La tarjeta no es valida" + lastFourNumbers);
+      document.getElementById("result").innerHTML = ("La tarjeta con terminación " + lastFourNumbers + " no es valida");
         }
 
    // result.innerText = ("La tarjeta " + result + " es " );
