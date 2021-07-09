@@ -11,6 +11,11 @@
 
   </head>
   <body>
+    <header>
+      <div class="upper">
+        <button class="upperBtn"> < Regresar </button>
+      </div>
+    </header>
     <!--FORMATO DE CARD VALIDATION-->
    <div class="container">
 <!--     <header>
@@ -20,26 +25,32 @@
     </header> -->
     <h1>Confirmar compra</h1>
      <h3>Ingresa los datos de tu tarjeta</h3>
-     <div class="black"></div> <br>
-      <div class="twoCol">
-        <div class="col1">
-          <p>Nombre/Apodo de tarjeta</p>
-            <input type="text">
-        </div>
-         <div class="col2">
-           <p> CCV </p>
-           <input type=text>
-
-         </div>
-      </div>
+     <div class="black"></div> 
           <br>
+        <div class="cardData">
           <!-- Validacion de tarjeta-->
-          <p>Número de tarjeta</p>
-          <input type="text" maxlength="16" pattern="^[0-9]*$" id="originalArray" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+          <div class="cardVal">
+            <p>Número de tarjeta</p>
+            <input type="text" required maxlength="16" pattern="^[0-9]*$" id="originalArray" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+          </div>
           <br>
+          <!--Decorativo-->
+          <div class="twoCol">
+            <div class="col1">
+              <p>Fecha de vencimiento</p>
+                <input id="expDate" type="month" name="expDate" value="2021-07">
+            </div>
+             <div class="col2">
+               <p> CCV </p>
+               <input type=text>
+             </div>
+          </div>
+        </div>  
+          <!--Buttons-->
           <button id="button-verify">Verificar tarjeta</button>
+          <button id="nextStep" style="display:none">Siguiente paso</button>
           <p id="result"></p>
-
+ 
     </div> 
     <main></main>
     <footer></footer>

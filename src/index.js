@@ -47,11 +47,17 @@ var originalArray = ""
 
     var approvedCard = validator.isValid(originalArray);
     var lastFourNumbers = validator.maskify(originalArray);
+    var bankIssuer = validator.getIssuer(originalArray);
     
     if (approvedCard === true) {
-      document.getElementById("result").innerHTML = ("La tarjeta con terminación "  + lastFourNumbers + " es valida");}
+      document.getElementById("result").innerHTML = ("La tarjeta con terminación "  + lastFourNumbers + " es V A L I D A y pertenece a " + bankIssuer);
+      //document.getElementById("result").innerHTML = ("La tarjeta con terminación "  + lastFourNumbers + " es V A L I D A");
+      document.getElementById('button-verify').style.display="none";
+      document.getElementById('nextStep').style.display="block";
+    }
     else {
       document.getElementById("result").innerHTML = ("La tarjeta con terminación " + lastFourNumbers + " no es valida");
+      document.getElementById("result").style.color = "red"; 
         }
 
    // result.innerText = ("La tarjeta " + result + " es " );
